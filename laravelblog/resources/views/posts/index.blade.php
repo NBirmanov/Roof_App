@@ -26,7 +26,12 @@
                     <div class="ads__block">
                     <div class="post__block post__block-size">
                         <div class="post__img">
-                            <img src="{{asset('/storage/' . $post->image)}}" alt="" class="post__images">
+                            @foreach($post->images as $key => $image)
+                                @if($key === 0)
+                                    <a  href="{{ route('posts.show',$post->id) }}"><img src="{{asset('/storage/' . $image->image)}}" alt="" class="post__images"></a>
+                                @endif
+
+                            @endforeach
                         </div>
                         <div class="post__text">
                             <div class="block__title">

@@ -15,7 +15,7 @@
             @foreach($post->images as $postImage)
                 <img src="{{asset('/storage/' . $postImage->image)}}" alt="" class="show__images">
             @endforeach
-
+        <div></div>
         </div>
         <div class="show__text">
             <p class="price">{{ $post->price }} Тг</p>
